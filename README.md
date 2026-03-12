@@ -1,24 +1,26 @@
-# Date Adder
+# Date Adder Utility
 
-A simple command-line utility to add time intervals (days, weeks, months, years) to a specific date or today's date.
+A collection of Python scripts for date-related file operations.
 
-## Features
-- Add days, weeks, months, or years to a date.
-- Supports ISO 8601 format (YYYY-MM-DD).
-- Defaults to today's date if none is provided.
+## Current Scripts
 
-## Usage
+### 1. `add_date.py`
+This script adds today's date (YYYY-MM-DD) as a prefix to every file in a specified directory.
 
+#### Usage
 ```bash
-python date_adder.py --date 2024-01-01 --days 10
-# Output: 2024-01-11
-
-python date_adder.py --weeks 2
-# Output: [Today's date + 14 days]
+python add_date.py [folder_path]
 ```
+- If no `folder_path` is provided, it defaults to the current directory (with a confirmation prompt).
+- It skips files that already have the today's date prefix to avoid duplication.
+
+## Project Structure
+- `MD_files/`: A sample directory containing markdown files prefixed with dates.
+- `Gemini.md`: Contains the original AI prompt used to generate the scripts.
+- `add_date.py`: The main file renaming utility.
 
 ## Testing
-Run tests using pytest:
+To test the renaming script, you can create a test folder with dummy files and run:
 ```bash
-pytest
+python add_date.py test_folder
 ```
